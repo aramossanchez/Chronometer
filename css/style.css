@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -9,16 +10,87 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(27, 27, 27);
 }
-#start{
-    cursor: pointer;
-}
-#reloj{
+nav{
+    font-family: 'Exo', sans-serif;
     width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 5em;
+    color: white;
+    background-color: rgb(56, 56, 56);
+    box-shadow: 2px 0px 20px 1px black;
+    border-radius: 0px 0px 1em 1em;
+    padding: 0.2em 0;
+    transition: 0.3s;
+}
+nav:hover{
+    padding: 1em 0;
+}
+nav div{
+    margin: 0 2em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+.activo{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 170, 0);
+    cursor: default;
+    border-radius: 2em;
+}
+#reloj{
+    font-family: 'Exo', sans-serif;
+    width: 7em;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 9em;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 187, 61);
+}
+#reloj div{
+    width: 1.3em;
+}
+#milisegundos{
+    font-size: 0.6em;
+    align-self: flex-end;
+    margin-bottom: 0.22em;
+}
+#botones{
+    font-family: 'Exo', sans-serif;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4em;
+    font-size: 1.25em;
+}
+#botones div{
+    color: black;
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    transition: 0.15s;
+    cursor: pointer;
+}
+#botones div:hover{
+    color: black;
+    box-shadow: 0px 0px 20px 2px white;
+    background-color: rgb(255, 255, 255);
+}
+#start{
+    background-color: greenyellow;
+}
+#pause{
+    background-color: yellow;
+}
+#reset{
+    background-color: red;
 }

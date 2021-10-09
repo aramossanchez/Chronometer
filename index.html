@@ -8,13 +8,24 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!-- CONTENEDOR GENERAL -->
     <div id="container">
-        <div id="start" onclick="crono.start()">START</div>
-        <div id="pause" onclick="crono.pause()">PAUSE</div>
+        <nav>
+            <div class="activo">Cronometro</div>
+            <div>Temporizador</div>
+        </nav>
+        <!-- CRONOMETRO -->
         <div id="reloj">
-            <div id="horas">0</div>:
+            <div id="horas">00</div>:
             <div id="minutos">00</div>:
-            <div id="segundos">00</div>
+            <div id="segundos">00</div>:
+            <div id="milisegundos">00</div>
+        </div>
+        <!-- BOTONES CRONOMETRO -->
+        <div id="botones">
+            <div id="start" onclick="crono.start()">START</div>
+            <div id="pause" onclick="crono.pause()">PAUSE</div>
+            <div id="reset" onclick="crono.reset()">RESET</div>
         </div>
     </div>
     <script src="./js/script.js"></script>
