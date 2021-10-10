@@ -60,6 +60,9 @@ let second = parseInt(segundosEdit.value);
 let empezarCrono = 0;
 let empezarTempo = 0;
 
+//SONIDO
+let sound = new Audio("./sound/alarm.mp3");
+
 //ALGORITMO
 
 // EVENTOS CREADOS PARA CONTROLAR LOS SELECT DEL TEMPORIZADOR
@@ -142,6 +145,8 @@ class timer{
                 (horasT < 10) ? horasTempo.innerHTML = "0" + horasT : horasTempo.innerHTML = horasT;
             };
             if (horasT == -1){
+                sound.currentTime = 0.5;
+                sound.play();
                 clearInterval(empezarTempo);
                 segundosT = 0;
                 minutosT = 0;
