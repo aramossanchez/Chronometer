@@ -69,8 +69,6 @@
     transition: 0.5s;
 }
 
-
-
 /* BARRA DE NAVEGACION */
 nav{
     font-family: 'Exo', sans-serif;
@@ -289,7 +287,7 @@ nav div{
 
 /* CONTROL MODO COLORES */
 #modo-color{
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     display: flex;
@@ -331,4 +329,35 @@ nav div{
 }
 .lado-dia{
     left: 0%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1015px){
+    body{
+        font-size: 0.75em;
+    }
+    nav{
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 769px){
+    body{
+        font-size: 0.55em;
+    }
+}
+@media (max-width: 565px){
+    body{
+        font-size: 0.35em;
+    }
+    nav{
+        font-size: 2.5em;
+    }
+}
+@media (max-width: 363px){
+    body{
+        font-size: 0.30em;
+    }
+    nav{
+        font-size: 3em;
+    }
 }
