@@ -33,6 +33,11 @@
     --fondo-boton-hover: white;
     --brillo-boton-hover: white;
     --fuente-boton-hover: black;
+
+    --fondo-temporizador: rgb(59, 59, 59);
+    --fuente-selector: rgb(255, 170, 0);
+    --fuente-botones-selector: rgb(255, 170, 0);
+    --borde-selector: rgb(255, 170, 0);
 }
 
 /* BARRA DE NAVEGACION */
@@ -128,27 +133,47 @@ nav div{
     position: absolute;
     bottom:0%;
     width: 50%;
-    height: 15em;
-    background-color: rgb(59, 59, 59);
+    height: 18em;
+    background-color: var(--fondo-temporizador);
     opacity:0;
     transition: 0.5s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    border-radius: 0.5em;
+}
+#selectores-temporizador{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 #selector-horas, #selector-minutos, #selector-segundos{
     display: flex;
     flex-direction: row;
 }
+#selector-horas div, #selector-minutos div, #selector-segundos div{
+    font-size: 2em;
+    color: var(--fuente-botones-selector);
+    cursor: pointer;
+}
 #selectores-temporizador select{
     background-color: black;
     width: 3em;
-    color: rgb(255, 170, 0);
-    font-size: 3em;
+    color: var(--fuente-selector);
+    font-size: 2em;
     text-align: center;
+    border: 0.1em solid var(--borde-selector);
 }
-
+#botones-temporizador{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25em;
+}
 /* BOTONES PARA CONTROLAR LAS ACCIONES EN EL CONTAINER */
 .botones{
     font-family: 'Exo', sans-serif;

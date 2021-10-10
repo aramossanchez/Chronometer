@@ -150,7 +150,7 @@ class timer{
                 minutosTempo.innerHTML = "00";
                 horasTempo.innerHTML = "00";
             };
-        }, 10);
+        }, 1000);
     };
     // SE PAUSA EL TEMPORIZADOR
     static pause(){
