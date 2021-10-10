@@ -62,6 +62,20 @@ let empezarTempo = 0;
 
 //ALGORITMO
 
+// EVENTOS CREADOS PARA CONTROLAR LOS SELECT DEL TEMPORIZADOR
+
+horasEdit.addEventListener("change", ()=>{
+    hour = parseInt(horasEdit.value);
+});
+
+minutosEdit.addEventListener("change", ()=>{
+    minute = parseInt(minutosEdit.value);
+});
+
+segundosEdit.addEventListener("change", ()=>{
+    second = parseInt(segundosEdit.value);
+});
+
 //CONTROL DE CRONOMETRO
 class crono{
     // INICIA EL CRONOMETRO
@@ -157,6 +171,12 @@ class timer{
         editTemporizador.style.bottom = "30%";
         editTemporizador.style.opacity = "1";
         editTemporizador.style.pointerEvents = "initial";
+        horasEdit.value = "00";
+        minutosEdit.value = "00";
+        segundosEdit.value = "00";
+        hour = 0;
+        minute = 0;
+        second = 0;
     }
     // SE CIERRA LA VENTANA PARA CONFIGURAR INICIO DEL TEMPORIZADOR
     static closeEdit(){
@@ -216,10 +236,14 @@ class timer{
         }
     }
     // SE ARRANCA EL TEMPORIZADOR DESDE LA VENTANA DE EDITAR TEMPORIZADOR
+    // CONTROLA TANTO LOS VALORES QUE ASIGNEMOS CON LOS BOTONES, COMO LOS QUE ASIGNAMOS SELECCIONANDO CON EL RATON
     static init(){
         horasTempo.innerHTML = horasEdit.value;
+        hour = parseInt(horasEdit.value);
         minutosTempo.innerHTML = minutosEdit.value;
+        minute = parseInt(minutosEdit.value);
         segundosTempo.innerHTML = segundosEdit.value;
+        second = parseInt(segundosEdit.value);
         horasT = parseInt(hour);
         minutosT = parseInt(minute);
         segundosT = parseInt(second);
