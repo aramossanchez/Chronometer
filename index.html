@@ -9,23 +9,212 @@
 </head>
 <body>
     <!-- CONTENEDOR GENERAL -->
-    <div id="container">
+    <div id="container" class="modo-noche">
         <nav>
-            <div class="activo">Cronometro</div>
-            <div>Temporizador</div>
+            <div id="boton-cronometro"class="activo" onclick="nav.changeToCrono()">Cronometro</div>
+            <div id="boton-temporizador" onclick="nav.changeToTimer()">Temporizador</div>
         </nav>
-        <!-- CRONOMETRO -->
-        <div id="reloj">
-            <div id="horas">00</div>:
-            <div id="minutos">00</div>:
-            <div id="segundos">00</div>:
-            <div id="milisegundos">00</div>
+        <div id="crono">
+            <!-- CRONOMETRO -->
+            <div id="reloj">
+                <div id="horas-crono">00</div>:
+                <div id="minutos-crono">00</div>:
+                <div id="segundos-crono">00</div>:
+                <div id="milisegundos-crono">00</div>
+            </div>
+            <!-- BOTONES CRONOMETRO -->
+            <div class="botones">
+                <div class="start" onclick="crono.start()">START</div>
+                <div class="pause" onclick="crono.pause()">PAUSE</div>
+                <div class="reset" onclick="crono.reset()">RESET</div>
+            </div>
         </div>
-        <!-- BOTONES CRONOMETRO -->
-        <div id="botones">
-            <div id="start" onclick="crono.start()">START</div>
-            <div id="pause" onclick="crono.pause()">PAUSE</div>
-            <div id="reset" onclick="crono.reset()">RESET</div>
+        <div id="tempo">
+            <!-- TEMPORIZADOR -->
+            <div id="reloj-temporizador">
+                <div id="horas-tempo">00</div>:
+                <div id="minutos-tempo">00</div>:
+                <div id="segundos-tempo">00</div>
+            </div>
+            <!-- BOTONES TEMPORIZADOR -->
+            <div class="botones">
+                <div class="edit" onclick="timer.edit()">EDIT</div>
+                <div class="start" onclick="timer.start()">START</div>
+                <div class="pause" onclick="timer.pause()">PAUSE</div>
+                <div class="reset" onclick="timer.reset()">RESET</div>
+            </div>
+            <!-- CONFIGURACION DE TEMPORIZADOR -->
+            <div id="edit-temporizador">
+                <div id="selectores-temporizador">
+                    <!-- SELECCIONAMOS LAS HORAS -->
+                    <div id="selector-horas">
+                        <div onclick="timer.editHour('-')"><</div>
+                        <select name="horas" id="horasEdit">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
+                        <div onclick="timer.editHour('+')">></div>
+                    </div>
+                    <!-- SELECCIONAMOS LOS MINUTOS -->
+                    <div id="selector-minutos">
+                        <div onclick="timer.editMinute('-')"><</div>
+                        <select name="minutosEdit" id="minutosEdit">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                        </select>
+                        <div onclick="timer.editMinute('+')">></div>
+                    </div>
+                    <!-- SELECCIONAMOS LOS SEGUNDOS -->
+                    <div id="selector-segundos">
+                        <div onclick="timer.editSecond('-')"><</div>
+                        <select name="segundosEdit" id="segundosEdit">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                        </select>
+                        <div onclick="timer.editSecond('+')">></div>
+                    </div>
+                </div>
+                <div class="init" onclick="timer.init()">OK</div>
+                <div class="close" onclick="timer.closeEdit()">CLOSE</div>
+            </div>
         </div>
     </div>
     <script src="./js/script.js"></script>
