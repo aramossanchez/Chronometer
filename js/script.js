@@ -252,16 +252,33 @@ class timer{
 }
 
 class nav{
+    // CAMBIA PANTALLA A TEMPORIZADOR
     static changeToTimer(){
         chrono.style.display = "none";
         tempo.style.display = "flex";
         botonTemporizador.classList.add("activo");
         botonCronometro.classList.remove("activo");
     }
+    // CAMBIA PANTALLA A CRONOMETROR
     static changeToCrono(){
         tempo.style.display = "none";
         chrono.style.display = "flex";
         botonCronometro.classList.add("activo");
         botonTemporizador.classList.remove("activo");
     }
+
+    static modoNoche(){
+        document.getElementById("bola-selector").classList.add("lado-noche");
+        document.getElementById("bola-selector").classList.remove("lado-dia");
+        document.getElementById("container").classList.remove("modo-dia");
+        document.getElementById("container").classList.add("modo-noche");
+    }
+
+    static modoDia(){
+        document.getElementById("bola-selector").classList.add("lado-dia");
+        document.getElementById("bola-selector").classList.remove("lado-noche");
+        document.getElementById("container").classList.remove("modo-noche");
+        document.getElementById("container").classList.add("modo-dia");
+    }
+
 }

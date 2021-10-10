@@ -1,26 +1,35 @@
 /* IMPORTAR FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
 
-/* FORMATO INICIAL */
-*{
-    padding: 0;
-    margin: 0;
-}
-#container{
-    width: 100;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(27, 27, 27);
-}
-
 /* CONTROL DE COLORES */
 .modo-dia{
+    --fondo-container: rgb(206, 206, 206);
 
+    --fondo-nav: rgb(0, 204, 255);
+    --fuente-nav: rgb(0, 0, 0);
+    --fuente-seleccionada-nav: rgb(0, 0, 0);
+    --sombra-nav: rgb(31, 31, 31);
+    --fondo-boton-activo-nav: rgb(255, 255, 255);
+
+    --fuente-reloj: rgb(0, 0, 0);
+
+    --fuente-botones: black;
+    --fondo-boton-hover: rgb(0, 204, 255);
+    --brillo-boton-hover: rgb(86, 221, 255);
+    --fuente-boton-hover: black;
+
+    --sombra-temporizador: black;
+    --fondo-temporizador: rgb(172, 172, 172);
+    --fondo-intro-temporizador: rgb(255, 255, 255);
+    --fondo-selector: rgb(201, 200, 200);
+    --fuente-selector: rgb(0, 0, 0);
+    --fuente-botones-selector: rgb(0, 0, 0);
+    --fondo-botones-selector: rgb(0, 204, 255);
+    --borde-selector: rgb(201, 200, 200);
 }
 .modo-noche{
+    --fondo-container: rgb(27, 27, 27);
+    
     --fondo-nav: rgb(56, 56, 56);
     --fuente-nav: rgb(207, 207, 207);
     --fuente-seleccionada-nav: rgb(255, 170, 0);
@@ -43,6 +52,24 @@
     --fondo-botones-selector: rgb(255, 170, 0);
     --borde-selector: rgb(0, 0, 0);
 }
+
+/* FORMATO INICIAL */
+*{
+    padding: 0;
+    margin: 0;
+}
+#container{
+    width: 100;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fondo-container);
+    transition: 0.5s;
+}
+
+
 
 /* BARRA DE NAVEGACION */
 nav{
@@ -75,12 +102,6 @@ nav div{
     color: var(--fuente-seleccionada-nav);
     cursor: default;
     border-radius: 2em;
-}
-#modo-color{
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    justify-self: flex-end;
 }
 
 /* CRONOMETRO */
@@ -264,4 +285,50 @@ nav div{
 }
 .close{
     background-color: red;
+}
+
+/* CONTROL MODO COLORES */
+#modo-color{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    margin: 0;
+}
+#modo-color div{
+    background-color: white;
+    border-radius: 100em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25em;
+    margin: 0.2em;
+}
+#modo-color img{
+    width: 1.5em;
+    cursor: pointer;
+}
+#modo-color #selector-modo{
+    background-color: rgba(255, 255, 255, 0.452);
+    width: 2.5em;
+    height: 0.5em;
+    position: relative;
+}
+#selector-modo #bola-selector{
+    background-color: rgb(4, 0, 255);
+    border-radius: 50em;
+    width: 0.5em;
+    height: 0.5em;
+    position: absolute;
+}
+.lado-noche{
+    right: 0%;    
+}
+.lado-dia{
+    left: 0%;
 }

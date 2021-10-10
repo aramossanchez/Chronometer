@@ -13,7 +13,7 @@
         <nav>
             <div id="boton-cronometro"class="activo" onclick="nav.changeToCrono()">Cronometro</div>
             <div id="boton-temporizador" onclick="nav.changeToTimer()">Temporizador</div>
-            <div id="modo-color">MODO DÍA -- MODO NOCHE</div>
+            
         </nav>
         <div id="crono">
             <!-- CRONOMETRO -->
@@ -228,6 +228,13 @@
                     <div class="close" onclick="timer.closeEdit()">CLOSE</div>
                 </div>
             </div>
+        </div>
+        <div id="modo-color">
+            <div onclick="nav.modoDia()"><img src="./img/sol.png" alt="Sol"></div>
+            <div id="selector-modo">
+                <div id="bola-selector" class="lado-noche"></div>
+            </div>
+            <div onclick="nav.modoNoche()"><img src="./img/luna.png" alt="Luna"></div>
         </div>
     </div>
     <script src="./js/script.js"></script>
